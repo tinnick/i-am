@@ -1,3 +1,2 @@
-import { message } from './js/import';
- 
-console.log(message);
+import './style.scss';
+import { RirekishoService } from './js/services/rirekisho.service';
