@@ -8,7 +8,7 @@ const isProduction = process.env.NODE_ENV == "production";
 const stylesHandler = isProduction ? MiniCSSExtractPlugin.loader : "style-loader";
 
 const config = {
-  entry: "./src/index.js",
+  entry: "./src/top-page/top-page.js",
   output: {
     path: path.resolve(__dirname, "dist"),
   },
@@ -18,7 +18,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/top-page/top-page.html",
+      template: 'src/top-page/top-page.html'
     })
   ],
   module: {
@@ -38,10 +38,24 @@ const config = {
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/'
+            }
+          }
+        ]
       },
+      {
+        test: /\.html$/i,
+        use: [
+          'html-loader'
+        ]
+      }
     ],
-  },
-  plugins: []
+  }
 };
 
 
@@ -50,7 +64,7 @@ module.exports = () => {
     config.mode = "production";
 
     config.plugins.push(
-      new WorkboxWebpackPlugin.GenerateSW(),
+      // new WorkboxWebpackPlugin.GenerateSW(),
       new MiniCSSExtractPlugin({ filename: '[contenthash].css' })
     );
   } else {

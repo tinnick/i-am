@@ -1,13 +1,5 @@
 const colors = require('tailwindcss/colors');
 
-const colorTheme = {
-  iam: {
-    "blue": "",
-    "yellow": "",
-    "red": ""
-  }
-}
-
 module.exports = {
   purge: [],
   presets: [],
@@ -21,7 +13,12 @@ module.exports = {
       '2xl': '1536px',
     },
     colors: {
-      extend: colorTheme,
+      // custom
+      "iam-blue": "#29abe2",
+      "iam-yellow": "#fffacd",
+      "iam-red": "#c1272d",
+      
+      // defaults
       transparent: 'transparent',
       current: 'currentColor',
 
@@ -248,6 +245,13 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
+        // custom
+      iam: [
+        '"Noto Serif JP"',
+        '"Noto Sans"',
+        'sans-serif',
+      ],
+      // defaults
       sans: [
         'ui-sans-serif',
         'system-ui',
@@ -277,6 +281,7 @@ module.exports = {
       ],
     },
     fontSize: {
+      // defaults
       xs: ['0.75rem', { lineHeight: '1rem' }],
       sm: ['0.875rem', { lineHeight: '1.25rem' }],
       base: ['1rem', { lineHeight: '1.5rem' }],
@@ -290,6 +295,11 @@ module.exports = {
       '7xl': ['4.5rem', { lineHeight: '1' }],
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
+
+      // custom
+      '10rem': ['10rem', { lineHeight: '1' }],
+      '11rem': ['11rem', { lineHeight: '1' }],
+      '12rem': ['12rem', { lineHeight: '1' }],
     },
     fontWeight: {
       thin: '100',
@@ -804,6 +814,10 @@ module.exports = {
       max: 'max-content',
     }),
     zIndex: {
+      // custom
+      '-1': '-1',
+
+      // defaults
       auto: 'auto',
       0: '0',
       10: '10',
