@@ -9,8 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet"> 
     <title>Document</title>
 </head>
-<body class="w-screen">
-    <main class="top-page m-auto mx-4 mt-8 mb-16">
+<body class="w-screen overflow-x-hidden">
+    <main class="top-page m-auto px-4 pt-8 pb-16">
         <section class="top-banner grid grid-cols-2">
             <div class="banner-left relative">
                 <svg viewbox="0 0 100 100" class="triangle text-iam-blue left-16 top-16">
@@ -19,12 +19,29 @@
                 <svg viewbox="0 0 100 100" class="triangle text-iam-yellow">
                     <polygon points="0,0 100,0 0,100"></polygon>
                 </svg>
-                <h1 class="text-11rem font-bold font-iam mt-24 ml-32">I-AM</h1>
-                <h2 class="text-5xl font-bold font-iam mt-12 ml-32">ecoな履歴書</h2>
+                <h1 class="title mt-12">I-AM</h1>
+                <h2 class="subtitle">ecoな履歴書</h2>
             </div>
-            <div class="banner-right">
-                <img class="image" src="assets/images/rirekisho.png">
+            <div class="banner-right flex flex-col content-between gap-y-8">
+                <img class="image m-auto w-3/4" src="assets/images/rirekisho.png">
+                <button class="create-button">新規登録</button>
             </div>
+        </section>
+        
+        <section class="rirekisho-table w-11/12 mx-auto mt-24">
+            <table class="w-full">
+                <thead>
+                    <tr class="border-b-4 border-black">
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Last Update</th>
+                        <th colspan="2">Operation</th>
+                    </tr>
+                </thead>
+                <tbody id="rirekisho-list">
+                    <!-- populated by javascript -->
+                </tbody>
+            </table>
         </section>
     </main>
 </body>
